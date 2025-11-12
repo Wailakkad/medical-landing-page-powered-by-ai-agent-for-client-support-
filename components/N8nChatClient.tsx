@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import '@n8n/chat/style.css'; // ✅ Keep this here, not in globals.css
+import '@n8n/chat/style.css';
 import { createChat } from '@n8n/chat';
 
 export default function N8nChatClient() {
@@ -18,8 +18,10 @@ export default function N8nChatClient() {
         en: {
           title: 'Medical Assistant 🤖',
           subtitle: 'Chat with us — we’re available 24/7.',
+          footer: 'Powered by N8N Chat', // ✅ Added
           getStarted: 'Start New Conversation',
           inputPlaceholder: 'Type your question…',
+          closeButtonTooltip: 'Close chat', // ✅ Added
         },
       },
     });
@@ -27,4 +29,3 @@ export default function N8nChatClient() {
 
   return <div id="n8n-chat"></div>;
 }
-
