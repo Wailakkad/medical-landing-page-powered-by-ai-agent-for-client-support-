@@ -2,7 +2,7 @@
 import { useState, useEffect, FC, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, easeOut } from 'framer-motion';
 import { Menu, X, Star, HeartPulse, Stethoscope, User } from 'lucide-react';
 import clsx from 'clsx';
 import N8nChatClient from '@/components/N8nChatClient';
@@ -64,15 +64,23 @@ const MedicalHeroPage: NextPage = () => {
     },
   };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
-  };
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.6, ease: easeOut },
+  },
+};
 
-  const imageVariants = {
-    hidden: { x: 50, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeOut' } },
-  };
+const imageVariants = {
+  hidden: { x: 50, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.8, ease: easeOut },
+  },
+};
 
   return (
     <>
